@@ -5,7 +5,7 @@ import doctors from "../../assets/doctors.png";
 const Fifthcomponent = () => {
   return (
     <>
-      <div className="relative">
+      <div className="relative ">
         <div
           className="absolute -z-10 w-[100%] h-screen p-5 flex justify-center items-center blur-[2px]"
           style={{
@@ -15,7 +15,7 @@ const Fifthcomponent = () => {
           }}
         ></div>
         <div className=" w-auto bg-[rgb(0,0,0,0.1)]">
-          <div className="[100%] h-screen flex justify-center items-center">
+          <div className="[100%] h-auto flex flex-col md:flex-row justify-center items-center">
             <div className="w-[50%] h-[600px] flex flex-col justify-center items-center px-20 py-5 ml-20">
               <h2
                 className="text-5xl font-bold mb-5 leading-tight text-blue-500"

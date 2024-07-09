@@ -14,7 +14,7 @@ const Aboutthree = () => {
             backgroundSize: "cover",
           }}
         ></div>
-        <div className=" [100%] h-[600px] flex justify-center items-center">
+        <div className=" w-[100%] h-[600px] flex justify-center items-center">
           <div className=" w-[50%] h-[600px] rounded-full flex justify-center items-center p-5">
             <img className="w-[100%] h-[500px] " src={clinic} />
           </div>
