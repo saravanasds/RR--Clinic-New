@@ -18,12 +18,12 @@ const Fifthcomponent = () => {
           <div className="[100%] h-screen flex justify-center items-center">
             <div className="w-[50%] h-[600px] flex flex-col justify-center items-center px-20 py-5 ml-20">
               <h2
-                className="text-5xl font-bold mb-5 leading-tight text-blue-500"
-               
+                className="text-7xl font-bold mb-5 leading-tight text-blue-500"
+               style={{textShadow:'2px 2px 0px rgba(0,0,0)'}}
               >
-                <span className="text-red-700"> Rediscover</span> Your Best HairToday
+                <span className="text-pink-600 text-7xl"> Rediscover </span> Your Best Hair Today
               </h2>
-              <p className="leading-normal text-md font-normal">
+              <p className="leading-normal text-xl font-semibold">
                 We believe that every patient is unique, and so is their hair
                 journey. Our approach is rooted in a commitment to
                 individualized care,understand your specific needs and goals.{" "}

@@ -19,7 +19,7 @@ const Navbar = () => {
             </li>
             <li><Link to={'/contact'}>Contact</Link></li>
         </ul>
-        <button className=' bg-red-700 rounded-full p-2 px-5 text-white font-medium'><Link>Book Appointment</Link></button>
+        <button className=' bg-pink-600 rounded-full p-2 px-5 text-white font-medium'><Link>Book Appointment</Link></button>
     </nav>
     </>
   )
