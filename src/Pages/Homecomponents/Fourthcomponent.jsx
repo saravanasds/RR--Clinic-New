@@ -22,14 +22,14 @@ const Fourthcomponent = () => {
 
       <div className="pt-[70px]">
       <div
-        className="flex flex-col md:flex-row justify-end  items-start pt-[150px] w-[100%] h-screen "
-        style={{  
+        className="flex flex-col md:flex-row justify-center md:justify-end  items-start md:pt-[150px] w-[100%] h-screen "
+        style={{
           backgroundImage: `url(${consult})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
-        <div className="w-[40%]   flex flex-col justify-end items-end gap-5 mr-5">
+        <div className="w-full md:w-[40%] px-10  flex flex-col justify-center md:justify-end items-center md:items-end gap-5 mr-5">
           <h2
             className="text-5xl font-bold text-gray-700 leading-tight"
             style={{ textShadow: "2px 2px 0px rgba(255,255,255,0.9)" }}
@@ -51,14 +51,16 @@ const Fourthcomponent = () => {
       <div className="w-[100%] pt-[100px]">
         <h2 className="text-5xl text-center font-bold uppercase">Treatments</h2>
         <div className="flex justify-center items-center py-10">
-          <div className="grid grid-cols-3 gap-10 px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 px-10">
 
 
             <div className="relative w-[400px] h-[300px] shadow-sm shadow-black flex justify-center items-center bg-blue-300 font-medium text-lg overflow-hidden">
               {open && (
                 <h2
-                  className={`absolute text-white text-xl bg-[rgba(0,0,0,0.6)] w-full h-full flex justify-center items-center z-10 pointer-events-none ${open ? "animate-slideUp" : "animate-slideDown"
-                    // (false) ? "animate-slidedown" : "animate-slideUp"
+                  className={`absolute text-white text-xl bg-[rgba(0,0,0,0.6)] w-full h-full flex justify-center items-center z-10 pointer-events-none ${
+                    open ? "animate-slideUp" : "animate-slideDown"
+                    
+                  
                     }`}
                 >
                   Eyebrow Transplant

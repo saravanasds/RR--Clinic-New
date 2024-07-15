@@ -23,8 +23,8 @@ export default {
         },
       },
       animation: {
-        // slideUp: 'slideUp 0.5s ease-in-out forwards',
-        // slideDown: 'slideDown 0.5s ease-in-out forwards',
+        slideUp: 'slideUp 0.5s ease-in-out forwards',
+        slideDown: 'slideDown 0.5s ease-in-out forwards',
         shake: 'shake 3s infinite',
       },
     },
