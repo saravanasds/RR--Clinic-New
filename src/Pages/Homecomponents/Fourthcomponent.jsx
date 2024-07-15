@@ -23,7 +23,7 @@ const Fourthcomponent = () => {
       <div className="pt-[70px]">
       <div
         className="flex flex-col md:flex-row justify-end  items-start pt-[150px] w-[100%] h-screen "
-        style={{
+        style={{  
           backgroundImage: `url(${consult})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
