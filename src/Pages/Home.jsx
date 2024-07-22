@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from './Hero'
 import Firstcomponent from './Homecomponents/Firstcomponent'
-
+import Consult from './Homecomponents/Consult'
 import Thirdcomponent from './Homecomponents/Thirdcomponent'
 import Fourthcomponent from './Homecomponents/Fourthcomponent'
 
@@ -14,7 +14,7 @@ const Home = () => {
        <Firstcomponent/>
        <Thirdcomponent/>
        <Fourthcomponent/>
-      
+       <Consult/>
 
        <div className='h-[50vh] bg-slate-300 flex justify-center items-center'>
   <div className="max-w-3xl text-center text-black">

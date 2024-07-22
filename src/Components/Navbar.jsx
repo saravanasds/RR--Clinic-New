@@ -27,8 +27,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='w-full h-auto flex text-lg font-normal p-6 bg-blue-300 justify-between z-10 shadow-lg'>
-        <h2 className='w-auto p-2 ml-5 font-bold text-xl'>RR Hair Clinic</h2>
+      <nav className=' w-full h-[10%] flex text-lg font-normal p-6 text-black justify-between z-10  shadow-lg '>
+        <h2 className='w-auto p-2 ml-5 font-bold text-2xl text-white 'style={{textShadow: "2px 2px 2px rgba(0,0,0,0.7)"}}>RR Hair Clinic</h2>
         <div className='block md:hidden mr-5'>
           <button onClick={toggleMenu}>
             {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
 
         <ul
-          className={`md:flex md:items-center md:justify-around p-2 text-md w-full md:w-auto absolute md:static bg-blue-300 transition-all duration-1000 ease-in-out ${
+          className={`md:flex md:items-center md:justify-between gap-10 p-2 text-md w-full md:w-auto absolute md:static transition-all duration-1000 ease-in-out ${
             isOpen ? 'top-16 left-0 right-0' : 'top-[-490px] left-0 right-0'
           }`}
         >
