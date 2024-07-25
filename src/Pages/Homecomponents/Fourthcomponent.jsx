@@ -22,7 +22,7 @@ const Fourthcomponent = () => {
 
      <div className="relative w-[100%] h-auto " >
 
-       <div className='absolute w-[100%] h-[300px]  bg-gradient-to-r from-pink-300 to-pink-300 mb-0'> <h2 className="text-5xl text-center font-bold uppercase p-8  text-gray-900 text">Treatments</h2></div> 
+       <div className='absolute w-[100%] h-[300px]  bg-gradient-to-b from-pink-300 to-red-500 mb-0'> <h2 className="text-5xl text-center font-bold uppercase p-8  text-gray-900 text">Treatments</h2></div> 
 
       <div className="w-[100%] py-20 ">
        

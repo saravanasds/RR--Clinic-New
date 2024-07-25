@@ -62,7 +62,7 @@ const Navbar = () => {
               About
             </NavLink>
           </li>
-          <li className='relative md:mr-6' onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+          <li className='relative md:mr-6' onClick={toggleDropdown} >
             <NavLink
               to='/services'
               className={({ isActive }) =>
@@ -83,7 +83,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className='block'>
-                <a href='#' className='block p-2'>
+                <a href='/Skintreatment' className='block p-2'>
                   Skin Treatment
                 </a>
               </li>

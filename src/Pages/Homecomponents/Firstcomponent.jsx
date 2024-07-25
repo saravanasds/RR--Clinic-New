@@ -51,7 +51,7 @@ const Firstcomponent = () => {
             className="w-[50%] h-[500px] md:w-[50%] flex  justify-center items-center "
             data-aos="fade-right"
           >
-            <div className="w-[70%]  lg:min-h-[500px] flex flex-col justify-center items-center text-gray-900 "style={{boxShadow:"2px 4px 2px rgba(255,255,255,0.7)"}}>
+            <div className="w-[70%]  lg:min-h-[500px] flex flex-col justify-center items-center text-gray-900 ">
               <h2 className="text-[29px] font-medium mb-5 tracking-wider">
                 Hair regrowth Solutions?
               </h2>

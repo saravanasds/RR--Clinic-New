@@ -7,6 +7,7 @@ import Services from "./Pages/Services"
 import Contact from "./Pages/Contact"
 import Layout from "./Components/Layout"
 import Book from "./Pages/Book"
+import Skintreatment from "./Pages/Servicescomponents/Skintreatment"
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -31,6 +32,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/services" element={<Services/>}/>
+        <Route path="/Skintreatment" element={<Skintreatment/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/book" element={<Book/>}/>
     </Route>
