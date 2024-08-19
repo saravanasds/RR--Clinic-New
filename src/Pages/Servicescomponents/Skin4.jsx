@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import hydra1 from "../../assets/hydra1.png";
+import hydra3 from "../../assets/hydra3.png";
 
 const Skin4 = () => {
   const [isActive, setActiveTab] = useState(1);
@@ -12,21 +12,20 @@ const Skin4 = () => {
     {
       id: 1,
       button: "Hydra Facial",
-      img: hydra1,
+      img: hydra3,
       p: "A HydraFacial is a popular non-invasive facial treatment that combines cleansing, exfoliation, extraction, hydration, and antioxidant protection. It is designed to improve skin health and appearance with minimal discomfort and downtime. ",
+      h1:"Deep Hydration:",
+      p1:"HydraFacial uses a unique vortex-fusion technology that combines cleansing, exfoliation, extraction, and hydration. This process infuses the skin with hydrating serums containing ingredients like hyaluronic acid, which helps to replenish moisture and improve skin hydration.",
+      h2:"Removal of Dead Skin Cells: ",
+      p2:"The treatment exfoliates the outer layer of dead skin cells, which can contribute to dryness and flakiness. By removing these cells, HydraFacial helps to reveal smoother, more hydrated skin underneath.",
+      h3:" Brightening Effects:",
+      p3:" HydraFacial treatments often include brightening serums that contain antioxidants and skin-brightening agents such as Vitamin C. These help to even out skin tone and enhance radiance, giving the skin a more vibrant and luminous appearance.",
+      // h4:"Improved Barrier Function:",
+      // p4:" Regular HydraFacial treatments can help strengthen the skin natural barrier, which is crucial for preventing moisture loss and protecting against environmental factors that can exacerbate dryness.",
+      // h5:"Increased Skin Clarity:",
+      // p5:" By removing dead skin cells and impurities, HydraFacial can improve skin clarity and reduce dullness caused by buildup and congestion..",
     },
-    // {
-    //   id: 2,
-    //   button: "Microdermabrasion",
-    //   img: doctor1,
-    //   p: "Microdermabrasion is a popular non-invasive cosmetic procedure that aims to improve the appearance of the skin by exfoliating the outermost layer.",
-    // },
-    // {
-    //   id: 3,
-    //   button: "Q-Switched Laser",
-    //   img: docs,
-    //   p: "The Q-Switched laser is a type of laser technology used primarily in dermatology and cosmetology for various skin treatments. It operates by emitting a very high-intensity pulse of laser energy in extremely short durations (nanoseconds), making it effective for specific skin issues.",
-    // },
+   
   ];
 
   const activeData = data.find(d => d.id === isActive);
@@ -48,7 +47,7 @@ const Skin4 = () => {
           </h2>
         ))}
       </div>
-      <div className="w-[100%] min-h-[450px] flex gap-4 py-5 px-5 tracking-wider leading-relaxed">
+      <div className="w-[100%] min-h-[450px] flex justify-center items-center gap-4 py-5 px-5 tracking-wider leading-relaxed">
         <div className="w-[40%] min-h-[100%]  ">
           <img
             className="block w-[100%] min-h-[100%] rounded-xl"
@@ -56,8 +55,18 @@ const Skin4 = () => {
             alt={activeData.button}
           />
         </div>
-        <div className="w-[60%] flex flex-col p-5 text-gray-700 ">
+        <div className="w-[60%] flex flex-col p-5 text-gray-700 gap-2">
           <p>{activeData.p}</p>
+          <h1 className="font-semibold">{activeData.h1}</h1>
+          <p>{activeData.p1}</p>
+          <h1 className="font-semibold">{activeData.h2}</h1>
+          <p>{activeData.p2}</p>
+          <h1 className="font-semibold">{activeData.h3}</h1>
+          <p>{activeData.p3}</p>
+          <h1 className="font-semibold">{activeData.h4}</h1>
+          <p>{activeData.p4}</p>
+          <h1 className="font-semibold">{activeData.h5}</h1>
+          <p>{activeData.p5}</p>
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className=' w-full h-[10%] flex text-lg font-normal p-6 text-black justify-between z-10  shadow-lg '>
+      <nav className=' w-full h-[10%] flex text-lg font-normal p-6 text-black justify-between z-10  shadow-lg overflow-hidden'>
         <h2 className='w-auto p-2 ml-5 font-bold text-2xl text-white 'style={{textShadow: "2px 2px 2px rgba(0,0,0,0.7)"}}>RR Hair Clinic</h2>
         <div className='block md:hidden mr-5'>
           <button onClick={toggleMenu}>
@@ -56,15 +56,15 @@ const Navbar = () => {
               to='/about'
               className={({ isActive }) =>
                 isActive ? 'block p-2 px-4 text-pink-600 rounded-md font-bold text-xl'
-                  : 'block p-2 hover:text-pink-400'
+                  :'block p-2 hover:text-pink-400'
               }
             >
               About
             </NavLink>
           </li>
-          <li className='relative md:mr-6' onClick={toggleDropdown} >
+          <li className='relative md:mr-6' onClick={toggleDropdown}>
             <NavLink
-              to='/services'
+              to='/'
               className={({ isActive }) =>
                 isActive ? 'block p-2 px-4 text-pink-600 rounded-md font-bold text-xl'
                   : 'block p-2 hover:text-pink-400'
@@ -87,22 +87,17 @@ const Navbar = () => {
                   Skin Treatment
                 </a>
               </li>
-              <li className='block'>
-                <a href='#' className='block p-2'>
-                  Transformation
-                </a>
-              </li>
             </ul>
           </li>
           <li className='md:mr-6'>
             <NavLink
-              to='/contact'
+              to='/Transformation'
               className={({ isActive }) =>
                isActive ? 'block p-2 px-4 text-pink-600 rounded-md font-bold text-xl'
                   : 'block p-2 hover:text-pink-400'
               }
             >
-              Contact
+               Transformation
             </NavLink>
           </li>
           <li>
@@ -117,6 +112,7 @@ const Navbar = () => {
         
       </nav>
       <Modal isOpen={isModalOpen} closeModal={closeModal}>
+         
         <Book />
       </Modal>
     </>
