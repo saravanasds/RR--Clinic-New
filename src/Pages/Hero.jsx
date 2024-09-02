@@ -3,50 +3,59 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 import hairbg from "../assets/hairbg.jpg";
 import image2 from "../assets/hairtrans2.jpg";
-// import image3 from "../assets/hairtrans3.jpg";
-// import image4 from "../assets/hairtrans1.jpg";
+import image3 from "../assets/hairtrans3.jpg";
+import image4 from "../assets/hairtrans1.jpg";
 
 const HeroCarousel = () => {
   const settings = {
     dots: false,
     arrow: false,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    fade: true, // Enable fade transition
+    cssEase: "ease-in-out", // Smoother easing function
   };
 
   const slides = [
-    { image: hairbg, text: "Hair and Skin Clinic" },
-    { image: image2, text: "Second Slide Text" },
-    // { image: image3, text: "Third Slide Text" },
-    // { image: image4, text: "Fourth Slide Text" },
+    { image: hairbg, text: "Revive Your Confidence with Healthy Hair" },
+    { image: image2, text: "Expert Care for Your Hair Restoration Journey" },
+    { image: image3, text: "Transforming Hair, Transforming Lives" },
+    { image: image4, text: "Your Hair, Our Priority" },
   ];
 
   return (
-    <div className="w-[100%] h-[700px]   text-white -mt-[10%]">
+    <div className="w-[100%] h-auto overflow-hidden text-white">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="relative m-auto w-[80%] h-screen flex justify-center items-center "
+            className="relative m-auto w-[80%] my-2 h-screen flex justify-center items-center"
           >
-            <img src={slide.image} alt="" className="absolute object-cover h-full w-full"/>
+            <img
+              src={slide.image}
+              alt={slide.text}
+              className="absolute object-cover h-full w-full rounded-lg"
+            />
             <h2
-              className="absolute z-10 h-[100vh] text-center w-[100%] flex justify-center items-center  md:text-7xl text-5xl bg-transparent font-bold "
-              data-aos="fade-zoom"
+              className="absolute z-10 h-[100vh] text-white text-center w-full flex justify-center items-center md:text-7xl text-3xl bg-transparent font-bold font-nunito "
+              style={{
+                WebkitTextStroke: "0.5px black", // Adds a white stroke to the text
+                // color: "transparent", // Makes the inside of the text transparent to highlight the stroke
+                textShadow: "4px 4px 4px black",
+              }}
+              data-aos="fade-left"
             >
               {slide.text}
             </h2>
           </div>
         ))}
       </Slider>
-      
     </div>
   );
 };

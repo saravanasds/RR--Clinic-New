@@ -8,14 +8,12 @@ import Skinhero from "./Skinhero";
 
 const Skintreatment = () => {
   return (
-    <div className="w-[100%] h-[100%]">
-      <div className="w-[100%] h-[100%]">
-        <Skinhero />
-        <Skin />
-        <Skin2 />
-        <Skin3 />
-        <Skin4 />
-      </div>
+    <div className="w-full h-full">
+      <Skinhero />
+      <Skin />
+      <Skin2 />
+      <Skin3 />
+      <Skin4 />
     </div>
   );
 };

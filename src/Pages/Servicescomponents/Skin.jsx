@@ -71,44 +71,45 @@ const Skin = () => {
     
   return (
   
-    <div className="lg:w-[90%] m-auto min-h-[500px] mt-5 mb-20 bg-gradient-to-r from-green-300 to-green-100 border-2 border-green-300 rounded-lg shadow-lg shadow-green-100">
-      <h2 className="text-center font-semibold text-4xl py-10 tracking-wider text-pink-600">
-        Skin brightening & Pigmentation
+    <div className="relative w-[95%] lg:w-[90%] m-auto min-h-[500px] mt-5 mb-20 bg-gradient-to-r from-green-300 to-green-100 border-2 border-green-300 rounded-lg shadow-lg shadow-green-100">
+  <h2 className="text-center font-semibold text-2xl lg:text-4xl py-5 lg:py-10 tracking-wider text-pink-600">
+    Skin brightening & Pigmentation
+  </h2>
+  <div className="flex flex-wrap gap-5 lg:gap-20 text-lg lg:text-xl justify-center lg:justify-end items-center lg:items-end px-5 lg:px-16 py-3 bg-white shadow-lg tracking-wider">
+    {data.map((buttonData) => (
+      <h2
+        key={buttonData.id}
+        className={isActive === buttonData.id ? "cursor-pointer text-blue-500 border-b-2 border-blue-500 font-md" : "cursor-pointer"}
+        onClick={() => changePara(buttonData.id)}
+      >
+        {buttonData.button}
       </h2>
-      <div className="flex gap-20 text-xl justify-end items-end px-16 py-3 bg-white shadow-lg  tracking-wider">
-        {data.map((buttonData) => (
-          <h2
-            key={buttonData.id}
-            className={isActive === buttonData.id ? "cursor-pointer text-blue-500 border-b-2 border-blue-500  font-md" : "cursor-pointer"}
-            onClick={() => changePara(buttonData.id)}
-          >
-            {buttonData.button}
-          </h2>
-        ))}
-      </div>
-      <div className="w-[100%] min-h-[450px] flex justify-center items-center gap-4 py-5 px-5 tracking-wider leading-relaxed">
-        <div className="w-[40%] lg:min-h-[400px]  ">
-          <img
-            className="block w-[100%] min-h-[100%] rounded-xl "
-            src={activeData.img}
-            alt={activeData.button}
-          />
-        </div>
-        <div className="w-[60%] flex flex-col p-5 text-gray-700 gap-2">
-          <p>{activeData.p}</p>
-          <h1 className="font-semibold">{activeData.h1}</h1>
-          <p>{activeData.p1}</p>
-          <h1 className="font-semibold">{activeData.h2}</h1>
-          <p>{activeData.p2}</p>
-          <h1 className="font-semibold">{activeData.h3}</h1>
-          <p>{activeData.p3}</p>
-          <h1 className="font-semibold">{activeData.h4}</h1>
-          <p>{activeData.p4}</p>
-          <h1 className="font-semibold">{activeData.h5}</h1>
-          <p>{activeData.p5}</p>
-        </div>
-      </div>
+    ))}
+  </div>
+  <div className="w-[100%] min-h-[450px] flex flex-col lg:flex-row justify-center items-center gap-4 py-5 px-5 tracking-wider leading-relaxed">
+    <div className="w-[100%] lg:w-[40%] lg:min-h-[400px] mb-5 lg:mb-0">
+      <img
+        className="block w-full h-auto rounded-xl"
+        src={activeData.img}
+        alt={activeData.button}
+      />
     </div>
+    <div className="w-[100%] lg:w-[60%] flex flex-col p-2 lg:p-5 text-gray-700 gap-2">
+      <p>{activeData.p}</p>
+      <h1 className="font-semibold">{activeData.h1}</h1>
+      <p>{activeData.p1}</p>
+      <h1 className="font-semibold">{activeData.h2}</h1>
+      <p>{activeData.p2}</p>
+      <h1 className="font-semibold">{activeData.h3}</h1>
+      <p>{activeData.p3}</p>
+      <h1 className="font-semibold">{activeData.h4}</h1>
+      <p>{activeData.p4}</p>
+      <h1 className="font-semibold">{activeData.h5}</h1>
+      <p>{activeData.p5}</p>
+    </div>
+  </div>
+</div>
+
   );
 };
 

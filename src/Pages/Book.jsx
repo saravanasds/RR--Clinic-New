@@ -24,7 +24,7 @@ const Book = () => {
   };
 
   return (
-    <div>
+    <div >
       <h2 className="text-2xl font-bold mb-4">Book Appointment</h2>
       <p className="mb-4">Please fill out the form below to book an appointment.</p>
       <form onSubmit={handleSubmit} className="space-y-4">

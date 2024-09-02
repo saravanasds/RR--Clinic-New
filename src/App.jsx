@@ -6,15 +6,20 @@ import About from "./Pages/About"
 // import Services from "./Pages/Services"
 // import Transformation from "./Pages/Transformation/Transformation"
 import Layout from "./Components/Layout"
-import Book from "./Pages/Book"
-import Skintreatment from "./Pages/Servicescomponents/Skintreatment"
+
+import Book from './Pages/Book';
+import Skintreatment from './Pages/Servicescomponents/Skintreatment';
+import RetentionPlan from './Pages/Servicescomponents/HairServices/RetentionPlan';
+import RestorationPlan from './Pages/Servicescomponents/HairServices/RestorationPlan';
+import SuperSpeciality from './Pages/Servicescomponents/HairServices/SuperSpeciality';
+import NonClinical from './Pages/Servicescomponents/HairServices/NonClinical';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
 function App() {
-
+ 
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -34,6 +39,15 @@ function App() {
         <Route path="/Skintreatment" element={<Skintreatment/>}/>
         {/* <Route path="/Transformation" element={<Transformation/>}/> */}
         <Route path="/book" element={<Book/>}/>
+
+         {/* Nested Routes for Hair Treatment Categories */}
+         <Route path="/services/hair-treatment">
+            <Route path="retention-plan" element={<RetentionPlan />} />
+            <Route path="restoration-plan" element={<RestorationPlan />} />
+            <Route path="super-speciality" element={<SuperSpeciality />} />
+            <Route path="nonclinical" element={<NonClinical />} />
+          </Route>
+
     </Route>
   </Routes>
   </BrowserRouter>
