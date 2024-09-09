@@ -11,7 +11,7 @@ const Firstcomponent = () => {
       <div className="w-full h-auto " data-aos="fade-up">
       
       <div className="w-[90%] h-auto bg-gray-300  mx-auto flex flex-col justify-center items-center gap-4 shadow-md my-4 rounded-lg md:rounded-xl lg:rounded-2xl md:flex-row -translate-y-[20%] bounce-animation">
-  <div className="w-full h-auto p-4 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12 max-w-max rounded-md md:rounded-lg">
+        <div className="w-full h-auto p-4 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12 max-w-max rounded-md md:rounded-lg">      
     
     <div className="flex flex-col justify-center items-center font-sen text-bold gap-2 p-4 rounded-2xl bg-gradient-to-r from-[#d864e2] to-[hsl(302,33%,95%)] shadow-clay-card">
       <IoIosPeople className="text-red-500 text-6xl md:text-8xl" />
@@ -37,28 +37,27 @@ const Firstcomponent = () => {
       </p>
     </div>
 
-  </div>
-</div>
-
+        </div>
+      </div>
       
       {/*  */} 
       
-        <div className="w-full h-auto py-16 font-poppins bg-white overflow-x-hidden">
-          <h2 className="text-center text-3xl md:text-4xl font-bold uppercase mb-12" data-aos="fade-up">
-            Feeling <span className="text-pink-600">utterly hopeless</span> about
-            your hair?
-          </h2>
+      <div className="w-full h-auto py-16 font-poppins bg-white overflow-x-hidden">
+        <h2 className="text-center text-3xl md:text-4xl font-bold uppercase mb-12" data-aos="fade-up">
+          Feeling <span className="text-pink-600">utterly hopeless</span> about
+          your hair?
+        </h2>
 
-          <div className="flex flex-col-reverse md:flex-row justify-center items-center text-pink-400 gap-8">
-            <div
-              className="w-full md:w-1/2 flex justify-center items-center"
+        <div className="flex flex-col-reverse md:flex-row justify-center items-center text-pink-400 gap-8 ">
+          <div
+              className="w-full md:w-1/2 flex justify-center items-center "
               data-aos="fade-right"
-            >
-              <div className="w-11/12 lg:w-3/4 text-gray-900 space-y-4 font-nunito">
-                <h2 className="text-2xl md:text-3xl font-medium tracking-wider">
+          >
+            <div className="w-11/12 lg:w-3/4 text-gray-900 space-y-4 font-nunito">
+              <h2 className="text-2xl md:text-3xl font-medium tracking-wider">
                   Hair Regrowth Solutions?
-                </h2>
-                <h3 className="text-3xl md:text-5xl font-bold uppercase">
+              </h2>
+              <h3 className="text-3xl md:text-5xl font-bold uppercase">
                   We've Got It All
                 </h3>
                 <p className="text-lg md:text-xl leading-relaxed">
@@ -68,19 +67,19 @@ const Firstcomponent = () => {
                   We believe that every patient is unique, and so is their hair journey. Our approach is rooted in a commitment to individualized care, understanding your specific needs and goals.
                 </p>
               </div>
-            </div>
+          </div>
            
-            <div
+          <div
               className="w-full md:w-1/2 flex justify-center items-center"
               data-aos="fade-left"
-            >
-              <img
-                className="w-3/4 md:w-full h-auto bounce-animation"
+          >
+            <img
+                className="w-3/4 md:w-full h-auto md:h-[500px] bounce-animation"
                 src={doctor}
                 alt="Hair treatment"
               />
             </div>
-          </div>
+        </div>
         </div>
 
       </div>

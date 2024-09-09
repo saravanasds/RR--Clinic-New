@@ -16,7 +16,7 @@ const Fifthcomponent = () => {
 
   return (
     <>
-      <div className="relative h-auto py-10 md:py-20 lg:py-28">
+      <div className="relative h-auto pt-10 md:pt-20 lg:pt-28 lg:mt-14">
         <div
           className="absolute -z-10 w-full h-full p-5 flex justify-center items-center blur-[2px]"
           style={{

@@ -96,7 +96,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar, openModal }) => {
     <li>
       <button
         onClick={() => setIsSkinTreatmentOpen((prevState) => !prevState)}
-        className={`block p-2 w-full text-left font-semibold hover:bg-blue-300 ${
+        className={`block p-2 w-full text-left font-semibold hover:bg-blue-300 rounded-t-lg ${
           window.location.pathname.includes('/services/hair-treatment')
             ? ''
             : ''
@@ -109,7 +109,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar, openModal }) => {
           <FaChevronDown className="inline ml-2" />
         )}
       </button>
-      <ul className={`bg-slate-100 flex flex-col items-center ${isSkinTreatmentOpen ? 'block' : 'hidden'}`}>
+      <ul className={`bg-slate-200 flex flex-col items-center ${isSkinTreatmentOpen ? 'block' : 'hidden'}`}>
         <li>
           <NavLink
             to="/services/hair-treatment/retention-plan"
@@ -151,7 +151,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar, openModal }) => {
         </li>
         <li>
           <NavLink
-            to="/services/hair-treatment/nonclinical"
+            to="/services/hair-treatment/other-treatments"
             className={({ isActive }) =>
               isActive
                 ? 'block p-2 text-yellow-600 rounded-md font-bold text-xl text-center'
@@ -159,12 +159,13 @@ const MobileSidebar = ({ isOpen, toggleSidebar, openModal }) => {
             }
             onClick={handleNavLinkClick}
           >
-            Non-Clinical
+            Other Treatments
           </NavLink>
         </li>
       </ul>
     </li>
-    <li>
+    
+    {/* <li>
       <NavLink
         to="/Skintreatment"
         className={({ isActive }) =>
@@ -176,7 +177,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar, openModal }) => {
       >
         Skin Treatment
       </NavLink>
-    </li>
+    </li> */}
   </ul>
 </li>
 

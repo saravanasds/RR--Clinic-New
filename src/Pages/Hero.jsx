@@ -30,7 +30,7 @@ const HeroCarousel = () => {
   ];
 
   return (
-    <div className="w-[100%] h-auto overflow-hidden text-white">
+    <div className="w-[100%] h-auto overflow-hidden text-white lg:mt-14">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div

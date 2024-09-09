@@ -5,6 +5,10 @@ import BeardTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/
 import MoustacheTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser1.jpeg";
 import PercutaneousFUEImg from "../../../assets/Hair-Treatment/Restoration Plan/laser1.jpeg";
 
+
+import BannerImage from '../../../assets/fue.jpg';
+
+
 function RestorationPlan() {
   const treatments = [
     {
@@ -89,13 +93,17 @@ function RestorationPlan() {
   };
 
   return (
-    <div className="container mx-auto md:p-4">
-      <div className="relative h-[200px] bg-blue-500 text-white flex items-center justify-center mb-8 md:rounded-2xl rounded-b-2xl">
-        <h1 className="text-5xl font-bold font-nunito text-center">Restoration Plan</h1>
+    <div className="container mx-auto md:p-4 md:pt-24">
+
+<div
+      className="relative h-[200px] bg-blue-500 text-white flex items-center justify-center mb-8 md:rounded-2xl rounded-b-2xl bg-cover bg-center"
+      style={{ backgroundImage: `url(${BannerImage})` }}
+    >
+      <h1 className="text-5xl font-bold font-nunito text-center">Restoration Plan</h1>
       </div>
 
       {/* Navbar for Treatment Navigation */}
-      <nav className="sticky top-16 md:top-[120px] z-10 bg-gray-400/70 shadow-md py-4 mb-8 mt-4 rounded-2xl">
+      <nav className=" md:top-[120px] z-10 bg-gray-400/70 shadow-md py-4 mb-8 mt-4 rounded-2xl">
         <ul className="flex flex-wrap justify-around">
           {treatments.map((treatment) => (
             <li key={treatment.id} className="mb-2 md:mb-0">
@@ -116,47 +124,55 @@ function RestorationPlan() {
 
       {/* Treatment Sections */}
       {treatments.map((treatment, index) => (
-        <div 
-          id={treatment.id} 
-          key={index} 
-          className="mb-8 min-h-screen flex flex-col justify-evenly px-4 sm:px-8"
-        >
-          <h2 className="text-2xl text-center font-semibold mb-2 border-2 border-black p-2 rounded-lg bg-gray-100">{treatment.title}</h2>
-          
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="md:w-1/2 mb-4 md:mb-0">
-              <img 
-                src={treatment.image} 
-                alt={treatment.title} 
-                className="w-full h-auto object-cover rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="md:w-1/2 md:pl-8">
-              <p className="mb-4">{treatment.description}</p>
-            </div>
+  <div
+    id={treatment.id}
+    key={index}
+    className="mb-8 min-h-[100vh] flex flex-col justify-evenly px-4 sm:px-8 bg-gradient-to-r from-slate-400 to-slate-100 rounded-xl"
+  >
+    <h2 className="text-2xl text-center font-semibold mb-2 border-2 border-black p-2 rounded-lg bg-gray-100">
+      {treatment.title}
+    </h2>
+
+    <div className="flex flex-col md:flex-row justify-between items-center">
+      {/* Image Section */}
+      <div className="md:w-1/2 p-4">
+        <img
+          src={treatment.image}
+          alt={treatment.title}
+          className="w-full h-[80%] object-contain rounded-lg shadow-lg"
+        />
+      </div>
+
+      {/* Text Section */}
+      <div className="md:w-1/2 md:pl-8">
+        <p className="mb-4">{treatment.description}</p>
+
+        {/* Pros and Cons Section */}
+        <div className="flex flex-col md:flex-row">
+          {/* Pros */}
+          <div className="mb-4 md:mr-8">
+            <h3 className="text-xl font-semibold mb-2">Pros</h3>
+            <ul className="list-disc pl-5">
+              {treatment.pros.map((pro, i) => (
+                <li key={i}>{pro}</li>
+              ))}
+            </ul>
           </div>
 
-          <div className="flex flex-col md:flex-row">
-            <div className="mb-4 md:mr-8">
-              <h3 className="text-xl font-semibold mb-2">Pros</h3>
-              <ul className="list-disc pl-5">
-                {treatment.pros.map((pro, i) => (
-                  <li key={i}>{pro}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Cons</h3>
-              <ul className="list-disc pl-5">
-                {treatment.cons.map((con, i) => (
-                  <li key={i}>{con}</li>
-                ))}
-              </ul>
-            </div>
+          {/* Cons */}
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Cons</h3>
+            <ul className="list-disc pl-5">
+              {treatment.cons.map((con, i) => (
+                <li key={i}>{con}</li>
+              ))}
+            </ul>
           </div>
         </div>
-      ))}
+      </div>
+    </div>
+  </div>
+))}
     </div>
   );
 }

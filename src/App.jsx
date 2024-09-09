@@ -4,7 +4,7 @@ import { BrowserRouter,Routes,Route } from "react-router-dom"
 import Home from "./Pages/Home"
 import About from "./Pages/About"
 // import Services from "./Pages/Services"
-// import Transformation from "./Pages/Transformation/Transformation"
+import Transformation from "./Pages/Transformation/Transformation"
 import Layout from "./Components/Layout"
 
 import Book from './Pages/Book';
@@ -13,6 +13,7 @@ import RetentionPlan from './Pages/Servicescomponents/HairServices/RetentionPlan
 import RestorationPlan from './Pages/Servicescomponents/HairServices/RestorationPlan';
 import SuperSpeciality from './Pages/Servicescomponents/HairServices/SuperSpeciality';
 import NonClinical from './Pages/Servicescomponents/HairServices/NonClinical';
+import OtherTreatments from "./Pages/Servicescomponents/HairServices/OtherTreat"
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -37,7 +38,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/Skintreatment" element={<Skintreatment/>}/>
-        {/* <Route path="/Transformation" element={<Transformation/>}/> */}
+        <Route path="/Transformation" element={<Transformation/>}/>
         <Route path="/book" element={<Book/>}/>
 
          {/* Nested Routes for Hair Treatment Categories */}
@@ -46,6 +47,7 @@ function App() {
             <Route path="restoration-plan" element={<RestorationPlan />} />
             <Route path="super-speciality" element={<SuperSpeciality />} />
             <Route path="nonclinical" element={<NonClinical />} />
+            <Route path="other-treatments" element={<OtherTreatments />} />
           </Route>
 
     </Route>
