@@ -245,8 +245,10 @@ const Navbar = () => {
         <Modal
           isOpen={isModalOpen}
           closeModal={() => setIsModalOpen(false)}
-          content={<Book />}
-        />
+        >
+          {/* Pass the Book component as children */}
+          <Book />
+        </Modal>
       )}
 
       {/* Mobile Sidebar */}

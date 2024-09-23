@@ -131,29 +131,24 @@ function OtherTreat() {
   return (
     <div className="container mx-auto md:px-4 md:pt-24">
 
-<div
-      className="relative h-[200px] bg-blue-500 text-white flex items-center justify-center mb-8 md:rounded-2xl rounded-b-2xl bg-cover bg-center"
-      style={{ backgroundImage: `url(${BannerImage})` }}
-    >
-      <h1 className="text-5xl font-bold font-nunito text-center">Other Treatments</h1>
+      <div
+        className="relative h-[200px] bg-blue-500 text-white flex items-center justify-center mb-8 md:rounded-2xl rounded-b-2xl bg-cover bg-center"
+        style={{ backgroundImage: `url(${BannerImage})` }}
+      >
+        <h1 className="text-5xl font-bold font-nunito text-center">Other Treatments</h1>
       </div>
-
 
       {/* Navigation for toggling sections */}
       <div className="flex justify-center my-4">
         <button
           onClick={() => setActiveSection('superSpeciality')}
-          className={`px-4 py-2 mx-2 rounded-lg font-semibold ${
-            activeSection === 'superSpeciality' ? 'bg-blue-500 text-white' : 'bg-gray-300'
-          }`}
+          className={`px-4 py-2 mx-2 rounded-lg font-semibold ${activeSection === 'superSpeciality' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
         >
           SuperSpeciality
         </button>
         <button
           onClick={() => setActiveSection('nonClinical')}
-          className={`px-4 py-2 mx-2 rounded-lg font-semibold ${
-            activeSection === 'nonClinical' ? 'bg-blue-500 text-white' : 'bg-gray-300'
-          }`}
+          className={`px-4 py-2 mx-2 rounded-lg font-semibold ${activeSection === 'nonClinical' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
         >
           NonClinical
         </button>
@@ -161,15 +156,16 @@ function OtherTreat() {
 
       {/* SuperSpeciality Section */}
       {activeSection === 'superSpeciality' && (
-        <div id="superSpeciality" className="mb-8">
-          <h1 className="text-3xl font-bold text-center my-8">SuperSpeciality Plan</h1>
+        <div id="superSpeciality" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <h1 className="text-3xl font-bold text-center my-8 col-span-full">SuperSpeciality Plan</h1>
           {superSpecialityTreatments.map((treatment, index) => (
-            <div key={index} className="mb-8">
-              <h2 className="text-2xl text-center font-semibold mb-2 border-2 border-black p-2 rounded-lg bg-gray-100">
-                {treatment.title}
-              </h2>
-              <p className="mb-4">{treatment.description}</p>
-              <ul className="list-disc pl-5">
+            <div
+              key={index}
+              className="bg-white hover:bg-gradient-to-tr from-blue-100 via-white to-blue-200 shadow-lg rounded-lg p-6 border border-blue-400 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              <h2 className="text-2xl font-semibold mb-2 text-blue-500">{treatment.title}</h2>
+              <p className="text-gray-600 mb-4">{treatment.description}</p>
+              <ul className="list-disc pl-5 text-gray-700">
                 {treatment.advantages.map((advantage, i) => (
                   <li key={i}>{advantage}</li>
                 ))}
@@ -181,15 +177,16 @@ function OtherTreat() {
 
       {/* NonClinical Section */}
       {activeSection === 'nonClinical' && (
-        <div id="nonClinical" className="mb-8">
-          <h1 className="text-3xl font-bold text-center my-8">NonClinical Plan</h1>
+        <div id="nonClinical" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <h1 className="text-3xl font-bold text-center my-8 col-span-full">NonClinical Plan</h1>
           {nonClinicalTreatments.map((treatment, index) => (
-            <div key={index} className="mb-8">
-              <h2 className="text-2xl text-center font-semibold mb-2 border-2 border-black p-2 rounded-lg bg-gray-100">
-                {treatment.title}
-              </h2>
-              <p className="mb-4">{treatment.description}</p>
-              <ul className="list-disc pl-5">
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg p-6 border border-blue-200 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              <h2 className="text-2xl font-semibold mb-2">{treatment.title}</h2>
+              <p className="text-gray-600 mb-4">{treatment.description}</p>
+              <ul className="list-disc pl-5 text-gray-700">
                 {treatment.advantages.map((advantage, i) => (
                   <li key={i}>{advantage}</li>
                 ))}
@@ -198,6 +195,17 @@ function OtherTreat() {
           ))}
         </div>
       )}
+
+<div className="h-[50vh] bg-gray-300 flex flex-col justify-center items-center mb-6">
+  <div className="max-w-3xl text-center text-black mb-4">
+    <blockquote className="italic text-lg md:text-2xl">
+      "Transform your hair with our expert treatments. Book your appointment today for healthier, fuller hair."
+    </blockquote>
+  </div>
+  <button className="px-6 py-3 bg-yellow-500 text-white rounded-lg font-semibold text-lg md:text-xl transition-transform duration-300 hover:scale-105 hover:bg-yellow-600">
+    Book Appointment
+  </button>
+</div>
     </div>
   );
 }

@@ -74,19 +74,19 @@ const ImageComparison = ({ beforeImage, afterImage, label }) => {
 
 const Transformation = () => {
   return (
-    <div className="max-w-7xl mx-auto p-6 space-y-12 md:pt-32">
+    <div className="max-w-7xl mx-auto p-6 space-y-12 lg:pt-32">
       {/* Hero Section */}
       <section
   className="text-center bg-cover bg-top bg-no-repeat py-16 rounded-lg relative"
   style={{ backgroundImage: `url(${Banner})`  }}
 >
   <h1
-    className="text-4xl md:text-6xl font-bold text-white"
+    className="text-2xl md:text-6xl font-bold text-white"
     style={{ textShadow: '2px 2px 5px rgba(0,0,0,0.5)' }}
   >
     Transformation Treatments
   </h1>
-  <p className="text-lg md:text-2xl text-blue-300 mt-4">
+  <p className="text-lg md:text-2xl text-blue-600 mt-4" style={{ textShadow: '4px 4px 6px rgba(0,0,0,0.9)' }}>
     Achieve your dream transformation with our cutting-edge treatments for hair and skin!
   </p>
 </section>

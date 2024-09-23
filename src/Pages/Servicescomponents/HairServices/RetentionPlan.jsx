@@ -86,7 +86,7 @@ function RetentionPlan() {
   };
 
   return (
-    <div className="container mx-auto md:p-4 md:pt-24">
+    <div className="container mx-auto md:p-4 lg:pt-24">
       {/* Banner Section */}
       <div
       className="relative h-[200px] bg-blue-500 text-white flex items-center justify-center mb-8 md:rounded-2xl rounded-b-2xl bg-cover bg-center"
@@ -122,8 +122,18 @@ function RetentionPlan() {
   <div
     id={treatment.id}
     key={index}
-    className="mb-8 min-h-[100vh] flex flex-col justify-evenly px-4 sm:px-8 bg-gradient-to-r from-blue-200 via-white to-blue-400 rounded-xl"
-  >
+    className={`mb-8 min-h-[100vh] flex flex-col justify-evenly px-4 py-2 sm:px-8 rounded-xl 
+      ${
+      index === 1
+        ? "bg-gradient-to-r from-purple-200 via-pink-300 to-purple-500"
+        : "bg-gradient-to-r from-blue-200 via-white to-blue-400"
+    }
+    ${
+      index === 2
+        ? "bg-gradient-to-r from-lime-200 via-white to-lime-300"
+        : "bg-gradient-to-r from-blue-200 via-white to-blue-400"
+    } `
+  } >
     <h2 className="text-2xl text-center font-semibold mb-2 border-2 border-black p-2 rounded-lg bg-gray-100">
       {treatment.title}
     </h2>

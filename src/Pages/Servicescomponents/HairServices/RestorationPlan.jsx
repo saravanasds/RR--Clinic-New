@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import BasicHairTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser1.jpeg";
-import EyebrowTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser1.jpeg";
-import BeardTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser1.jpeg";
-import MoustacheTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser1.jpeg";
-import PercutaneousFUEImg from "../../../assets/Hair-Treatment/Restoration Plan/laser1.jpeg";
+import BasicHairTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser1.jpg";
+import EyebrowTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser2.jpg";
+import BeardTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser3.jpg";
+import MoustacheTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser5.jpeg";
+import PercutaneousFUEImg from "../../../assets/Hair-Treatment/Restoration Plan/laser5.jpeg";
 
 
 import BannerImage from '../../../assets/fue.jpg';
@@ -127,7 +127,15 @@ function RestorationPlan() {
   <div
     id={treatment.id}
     key={index}
-    className="mb-8 min-h-[100vh] flex flex-col justify-evenly px-4 sm:px-8 bg-gradient-to-r from-slate-400 to-slate-100 rounded-xl"
+    className={`mb-8 min-h-[100vh] flex flex-col justify-evenly px-4 py-2 sm:px-8 rounded-xl
+      ${{
+        1: "bg-gradient-to-r from-purple-200 via-pink-300 to-purple-500",
+        2: "bg-gradient-to-r from-lime-200 via-white to-lime-300",
+        3: "bg-gradient-to-r from-yellow-200 via-white to-yellow-300",
+        4: "bg-gradient-to-r from-blue-200 via-white to-blue-300"
+      }[index] || "bg-gradient-to-r from-slate-200 via-white to-slate-400"}
+    `}
+    
   >
     <h2 className="text-2xl text-center font-semibold mb-2 border-2 border-black p-2 rounded-lg bg-gray-100">
       {treatment.title}
