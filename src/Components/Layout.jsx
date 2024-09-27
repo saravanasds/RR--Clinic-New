@@ -12,7 +12,7 @@ const Layout = () => {
       <div className="bg-blue-500 text-white p-2 md:p-4 lg:hidden">
         <p className="text-sm md:text-base flex justify-evenly">
           <div>
-          <span className='font-bold text-md text-black pr-2'>Contact</span><a href="tel:+1234567890" className="underline">+1 234 567 890</a></div> |
+          <span className='font-bold text-md text-black pr-2'>Contact</span><a href="tel:+919655334567" className="underline">96553 34567</a></div> |
           <div>
           <span className='font-bold text-md text-black pr-2'>Email: </span><a href="mailto:info@example.com" className="underline">info@example.com</a>
           </div>
