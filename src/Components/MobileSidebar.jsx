@@ -2,10 +2,14 @@ import React, { useRef, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-const MobileSidebar = ({ isOpen, toggleSidebar, openModal }) => {
+import Modal from "../Components/Modal";
+import Book from "../Pages/Book";
+
+const MobileSidebar = ({ isOpen, toggleSidebar }) => { // Removed openModal from props
   const [isHairTreatmentOpen, setIsHairTreatmentOpen] = useState(false);
   const [isSkinTreatmentOpen, setIsSkinTreatmentOpen] = useState(false);
   const sidebarRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state to manage its visibility
 
   // Close sidebar when clicked outside the sidebar's width
   useEffect(() => {
@@ -32,8 +36,18 @@ const MobileSidebar = ({ isOpen, toggleSidebar, openModal }) => {
     toggleSidebar();
   };
 
+  // Open the modal
+  const handleOpenModal = () => {
+    setIsModalOpen(true); // Correct state update for modal
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close modal
+  };
+
   return (
-    <div
+    <>
+      <div
       ref={sidebarRef}
       className={`fixed top-0 left-0 h-full bg-white/30 backdrop-blur-xl shadow-lg overflow-scroll transition-transform transform z-[1000] ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
@@ -145,19 +159,6 @@ const MobileSidebar = ({ isOpen, toggleSidebar, openModal }) => {
                       Restoration Plan
                     </NavLink>
                   </li>
-                  {/* <li>
-                    <NavLink
-                      to="/services/hair-treatment/super-speciality"
-                      className={({ isActive }) =>
-                        isActive
-                          ? 'block p-2 text-yellow-600 rounded-md font-bold text-xl text-center'
-                          : 'block p-2'
-                      }
-                      onClick={handleNavLinkClick}
-                    >
-                      Super Speciality
-                    </NavLink>
-                  </li> */}
                   <li>
                     <NavLink
                       to="/services/hair-treatment/other-treatments"
@@ -208,15 +209,18 @@ const MobileSidebar = ({ isOpen, toggleSidebar, openModal }) => {
 
         <button
           className="bg-yellow-600 rounded-full p-2 mt-4 px-4 text-white font-medium hover:bg-yellow-500 transition-all"
-          onClick={() => {
-            toggleSidebar();
-            openModal();
-          }}
+          onClick={handleOpenModal} // Corrected modal open handler
         >
           Book Appointment
         </button>
       </div>
     </div>
+
+    <Modal isOpen={isModalOpen} closeModal={closeModal}>
+        <Book />
+      </Modal>
+
+    </>
   );
 };
 

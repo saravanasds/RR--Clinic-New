@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import BasicHairTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser1.jpg";
 import EyebrowTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser2.jpg";
 import BeardTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser3.jpg";
-import MoustacheTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser5.jpeg";
+import MoustacheTransplantImg from "../../../assets/Hair-Treatment/Restoration Plan/laser4.jpg";
 import PercutaneousFUEImg from "../../../assets/Hair-Treatment/Restoration Plan/laser5.jpeg";
 
 

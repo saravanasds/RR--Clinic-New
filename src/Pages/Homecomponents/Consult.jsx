@@ -1,11 +1,11 @@
 import React from 'react';
-import consult from "../../assets/pink.jpeg";
+import consult from "../../assets/pink.png";
 
 const Consult = () => {
   return (
     <>
       <div
-        className="flex flex-col md:flex-row justify-center md:justify-end items-start md:pt-[150px] w-full h-screen bg-cover bg-left md:bg-center"
+        className="flex flex-col md:flex-row justify-center bg-blue-200 md:justify-end items-start md:pt-[150px] w-full h-[70vh] bg-cover bg-left md:bg-center"
         style={{
           backgroundImage: `url(${consult})`,
         }}
@@ -18,7 +18,7 @@ const Consult = () => {
             data-aos-duration="1000"
             data-aos-delay="100"
           >
-            <span className="text-blue-700">"Book </span>Your Free Consultation Now
+            <span className="text-yellow-600 font-cursive">"Book </span>Your Free Consultation Now
           </h2>
           <p
             className='text-gray-700 text-2xl font-bold w-[70%]'
@@ -36,8 +36,19 @@ const Consult = () => {
             data-aos-duration="1000"
             data-aos-delay="500"
           >
-            Get Ready to <span className="text-blue-700">Rediscover </span>Your Confidence!"
+            Get Ready to <span className="text-yellow-600 font-cursive">Rediscover </span>Your Confidence!"
           </h2>
+        </div>
+        
+      </div>
+
+      {/*  */}
+
+      <div className="h-[30vh] bg-blue-200 flex justify-center items-center">
+        <div className="max-w-3xl text-center text-black">
+          <blockquote className="italic text-lg md:text-2xl">
+            "Your journey to beautiful hair and healthy skin begins here."
+          </blockquote>
         </div>
       </div>
     </>

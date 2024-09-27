@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp, FaChevronRight } from "react-icons/fa";
+import { FaBarsStaggered } from "react-icons/fa6";
 import MobileSidebar from "./MobileSidebar";
 import Modal from "../Components/Modal";
 import Book from "../Pages/Book";
@@ -62,200 +63,210 @@ const Navbar = () => {
     };
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // 
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  // 
   return (
     <>
+    
       {/* Mobile Navbar */}
-      <div className="flex justify-between items-center lg:hidden p-4 px-8 md:px-[100px] md:py-8 bg-[#4f4fcf] shadow-lg z-[990] sticky top-0">
+      <div className="flex justify-between items-center lg:hidden p-4 px-8 md:px-[100px] md:py-8 bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg z-[990] sticky top-0 backdrop-blur-lg rounded-b-lg">
         <h2
-          className="font-bold text-xl  text-white"
+          className="font-bold text-xl text-white"
           style={{ textShadow: "2px 2px 2px rgba(0,0,0,0.7)" }}
         >
           RR Hair Clinic
         </h2>
 
         <button onClick={toggleMobileSidebar} className="text-white">
-          {isMobileSidebarOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
+          {isMobileSidebarOpen ? <FaBarsStaggered size={28} /> : <FaBars size={28} />}
         </button>
       </div>
 
-      {/* Desktop Navbar */}
-<nav
-  className={`hidden lg:flex w-full items-center justify-between p-6 bg-[#4f4fcf] shadow-lg fixed top-0 z-[990] transition-transform duration-300 ${
-    showNavbar ? "translate-y-0" : "-translate-y-full"
-  }`}
->
-  <h2
-    className="font-bold text-xl text-white ml-5"
-    style={{ textShadow: "2px 2px 2px rgba(0,0,0,0.7)" }}
-  >
-    RR Hair Clinic
-  </h2>
-
-  <ul className="text-white md:flex md:items-center md:gap-10 p-2 text-base w-full md:w-auto">
-    <li className="">
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          isActive
-            ? "block p-2 px-4 text-yellow-600 font-bold text-base border-b-2 border-yellow-400 transition-all duration-300"
-            : "block p-2 px-4 hover:text-yellow-300 text-base transition-all duration-300"
-        }
-      >
-        Home
-      </NavLink>
-    </li>
-    <li className="">
-      <NavLink
-        to="/about"
-        className={({ isActive }) =>
-          isActive
-            ? "block p-2 px-4 text-yellow-600 font-bold text-base border-b-2 border-yellow-400 transition-all duration-300"
-            : "block p-2 px-4 hover:text-yellow-300 text-base transition-all duration-300"
-        }
-      >
-        About
-      </NavLink>
-    </li>
-
-    <li className="relative " ref={dropdownRef}>
-  <button
-    onClick={toggleDropdown}
-    className="flex items-center p-2 px-4 hover:text-yellow-300 text-base transition-all duration-300"
-  >
-    <span>Services</span>
-    {isDropdownOpen ? (
-      <FaChevronUp className="ml-2" />
-    ) : (
-      <FaChevronDown className="ml-2" />
-    )}
-  </button>
-
-  <ul
-    className={`absolute left-0 mt-1 bg-blue-200 text-[#0d0dbb] text-xl rounded-md p-2 z-20 shadow-lg transition-all duration-300 ${
-      isDropdownOpen ? "block" : "hidden"
-    } w-auto `}
-  >
-    <li className="relative mx-auto">
-      <button
-        onClick={toggleSubDropdown}
-        className="flex items-center p-2 hover:bg-blue-300 w-full text-left text-sm transition-all duration-300 whitespace-nowrap"
-      >
-        <span>Hair Treatment</span>
-        {isSubDropdownOpen ? (
-          <FaChevronRight className="ml-2" />
-        ) : (
-          <FaChevronDown className="ml-2" />
-        )}
-      </button>
-      <ul
-        className={`absolute left-full top-0 mt-0 w-auto text-white bg-blue-500 rounded-md p-2 z-30 shadow-lg transition-all duration-300 ${
-          isSubDropdownOpen ? "block" : "hidden"
+      <nav
+        className={`hidden lg:flex w-full items-center justify-between p-4 bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg fixed top-0 z-[990] rounded-b-2xl  transition-transform duration-300 backdrop-blur-lg ${
+          showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <li>
-          <NavLink
-            to="/services/hair-treatment/retention-plan"
-            className="block p-2 hover:bg-blue-400 text-sm transition-all duration-300 whitespace-nowrap"
-            onClick={() => {
-              setIsSubDropdownOpen(false);
-              setIsDropdownOpen(false);
-            }}
-          >
-            Retention Plan
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/services/hair-treatment/restoration-plan"
-            className="block p-2 hover:bg-blue-400 text-sm transition-all duration-300 whitespace-nowrap"
-            onClick={() => {
-              setIsSubDropdownOpen(false);
-              setIsDropdownOpen(false);
-            }}
-          >
-            Restoration Plan
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/services/hair-treatment/other-treatments"
-            className="block p-2 hover:bg-blue-400 text-sm transition-all duration-300 whitespace-nowrap"
-            onClick={() => {
-              setIsSubDropdownOpen(false);
-              setIsDropdownOpen(false);
-            }}
-          >
-            Other Treatments
-          </NavLink>
-        </li>
-        {/* <li>
-          <NavLink
-            to="/services/hair-treatment/nonclinical"
-            className="block p-2 hover:bg-blue-400 text-sm transition-all duration-300 whitespace-nowrap"
-            onClick={() => {
-              setIsSubDropdownOpen(false);
-              setIsDropdownOpen(false);
-            }}
-          >
-            Non-Clinical
-          </NavLink>
-        </li> */}
-      </ul>
-    </li>
+        
+        {/* Logo on the left */}
+        <h2
+          className="font-bold text-2xl text-white ml-5 flex-none tracking-wide"
+          style={{ textShadow: "2px 2px 2px rgba(0,0,0,0.7)" }}
+        >
+          RR Hair Clinic
+        </h2>
 
-    {/*  */}
-    <li className="mx-auto">
-      <NavLink
-        to="/Skintreatment"
-        className="block p-2 hover:bg-blue-300 text-sm transition-all duration-300 whitespace-nowrap"
-        onClick={() => setIsDropdownOpen(false)}
-      >
-        Skin Treatment
-      </NavLink>
-    </li>
-  </ul>
-</li>
+        {/* Centered links */}
+        <ul className="text-white flex items-center gap-6 p-2 text-lg mx-auto">
+          <li>
+            <NavLink
+              to="/" onClick={scrollToTop}
+              className={({ isActive }) =>
+                isActive
+                  ? "block p-2 px-4 text-yellow-600 font-bold text-lg border-b-2 border-yellow-400 transition-all duration-300"
+                  : "block p-2 px-4 hover:text-yellow-300 text-lg transition-all duration-300"
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about" onClick={scrollToTop}
+              className={({ isActive }) =>
+                isActive
+                  ? "block p-2 px-4 text-yellow-600 font-bold text-lg border-b-2 border-yellow-400 transition-all duration-300"
+                  : "block p-2 px-4 hover:text-yellow-300 text-lg transition-all duration-300"
+              }
+            >
+              About
+            </NavLink>
+          </li>
 
+          <li className="relative" ref={dropdownRef}>
+            <button
+              onClick={toggleDropdown}
+              className="flex items-center p-2 px-4 hover:text-yellow-300 text-lg transition-all duration-300"
+            >
+              <span className="font-semibold">Services</span>
+              {isDropdownOpen ? (
+                <FaChevronUp className="ml-2" />
+              ) : (
+                <FaChevronDown className="ml-2" />
+              )}
+            </button>
 
-    <li className="">
-      <NavLink
-        to="/Transformation"
-        className={({ isActive }) =>
-          isActive
-            ? "block p-2 px-4 text-yellow-600 font-bold text-base border-b-2 border-yellow-200 transition-all duration-300"
-            : "block p-2 px-4 hover:text-yellow-300 text-base transition-all duration-300"
-        }
-      >
-        Transformation
-      </NavLink>
-    </li>
-  </ul>
+            {/* Dropdown */}
+            <ul
+              className={`absolute left-0 mt-1 bg-[#aaaae7] text-[#0d0dbb] text-lg rounded-md p-2 z-20 shadow-lg transition-all duration-300 ${
+                isDropdownOpen ? "block" : "hidden"
+              } w-auto`}
+            >
+              {/* Submenu */}
+              <li className="relative mx-auto">
+                <button
+                  onClick={toggleSubDropdown}
+                  className="flex items-center p-2 hover:bg-blue-300 rounded-md w-full text-left text-base transition-all duration-300 whitespace-nowrap"
+                >
+                  <span className="font-semibold">Hair Treatment</span>
+                  {isSubDropdownOpen ? (
+                    <FaChevronRight className="ml-2" />
+                  ) : (
+                    <FaChevronDown className="ml-2" />
+                  )}
+                </button>
+                <ul
+                  className={`absolute left-full top-0 mt-0 w-auto text-white bg-blue-500 rounded-md p-2 z-30 shadow-lg transition-all duration-300 ${
+                    isSubDropdownOpen ? "block" : "hidden"
+                  }`}
+                >
+                  <li>
+                    <NavLink
+                      to="/services/hair-treatment/retention-plan"
+                      className="block p-2 hover:bg-blue-400 text-base transition-all rounded-md duration-300 whitespace-nowrap"
+                      onClick={() => {
+                        setIsSubDropdownOpen(false);
+                        setIsDropdownOpen(false);
+                        scrollToTop()
+                      }}
+                      // onClick={scrollToTop}
+                    >
+                      Retention Plan
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/services/hair-treatment/restoration-plan"
+                      className="block p-2 hover:bg-blue-400 text-base transition-all rounded-md duration-300 whitespace-nowrap"
+                      onClick={() => {
+                        setIsSubDropdownOpen(false);
+                        setIsDropdownOpen(false);
+                        scrollToTop()
+                      }}
+                    >
+                      Restoration Plan
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/services/hair-treatment/other-treatments"
+                      className="block p-2 hover:bg-blue-400 text-base transition-all rounded-md duration-300 whitespace-nowrap"
+                      onClick={() => {
+                        setIsSubDropdownOpen(false);
+                        setIsDropdownOpen(false);
+                        scrollToTop()
+                      }}
+                    >
+                      Other Treatments
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
 
+              <li className="mx-auto">
+                <NavLink
+                  to="/Skintreatment"
+                  className="block p-2 hover:bg-blue-300 rounded-md text-base transition-all duration-300 whitespace-nowrap"
+                  onClick={() => {setIsDropdownOpen(false);
+                    scrollToTop()
+                  }}
+                >
+                  <span className="font-semibold">Skin Treatment</span> {/* Ensure consistent styling */}
+                </NavLink>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <NavLink
+              to="/Transformation" onClick={scrollToTop}
+              className={({ isActive }) =>
+                isActive
+                  ? "block p-2 px-4 text-yellow-600 font-bold text-lg border-b-2 border-yellow-200 transition-all duration-300"
+                  : "block p-2 px-4 hover:text-yellow-300 text-lg transition-all duration-300"
+              }
+            >
+              Transformation
+            </NavLink>
+          </li>
+        </ul>
+
+         {/* Book button on the right */}
   <button
-    className="bg-yellow-600 text-white hover:bg-yellow-400 p-3  text-base rounded-xl font-semibold transition-all duration-300"
-    onClick={() => setIsModalOpen(true)}
+    className="bg-white text-yellow-600 hover:text-white border border-yellow-600 hover:bg-yellow-400 py-3 px-4 text-lg rounded-full font-semibold transition-all duration-300 mr-5"
+    // onClick={() => setIsModalOpen(true)}
+    onClick={openModal}
   >
     Book Appointment
   </button>
-</nav>
+      </nav>
 
+      <Modal isOpen={isModalOpen} closeModal={closeModal}>
+        <Book />
+      </Modal>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
-          closeModal={() => setIsModalOpen(false)}
-        >
-          {/* Pass the Book component as children */}
+      {/* Modal for booking */}
+      {/* {isModalOpen && (
+        <Modal onClose={() => setIsModalOpen(false)}>
           <Book />
         </Modal>
-      )}
+      )} */}
 
       {/* Mobile Sidebar */}
-      <MobileSidebar
-        isOpen={isMobileSidebarOpen}
-        onClose={toggleMobileSidebar}
-      />
+      <MobileSidebar isOpen={isMobileSidebarOpen} toggleSidebar={toggleMobileSidebar} />
     </>
   );
 };

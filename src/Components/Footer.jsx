@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaInfoCircle, FaPhone, FaHeart } from 'react-icons/fa'; // Import icons
+import { FaXTwitter } from "react-icons/fa6";
+import { FaHome, FaInfoCircle, FaPhone, FaHeart, FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'; // Import icons
 import { LuDiamond } from "react-icons/lu";
 import ImageBG from '../assets/docs.jpeg';
 import AOS from 'aos';
@@ -107,23 +108,23 @@ function Footer() {
 
                 <li className="flex items-center space-x-2">
                   <LuDiamond className="text-blue-400" />
-                  <Link
-                    to="/services/hair-treatment/super-speciality"
+                  <Link 
+                    to="/services/hair-treatment/other-treatments"
                     onClick={scrollToTop}
                     className="hover:underline hover:text-blue-300"
                   >
-                    Super Speciality
+                    Other Treatments
                   </Link>
                 </li>
 
                 <li className="flex items-center space-x-2">
                   <LuDiamond className="text-blue-400" />
                   <Link
-                    to="/services/hair-treatment/nonclinical"
+                    to="/Skintreatment"
                     onClick={scrollToTop}
                     className="hover:underline hover:text-blue-300"
                   >
-                    Non-Clinical Plan
+                    Skin Treatments
                   </Link>
                 </li>
               </ul>
@@ -145,13 +146,26 @@ function Footer() {
               </p>
             </div>
           </div>
-
+      <hr className='my-8 w-[85%] mx-auto' />
           {/* Copyright Section */}
-          <div className="text-center mt-8" data-aos="fade-up">
-            <p>
+          <div className="flex flex-col items-center md:flex-row justify-center md:justify-evenly text-center mt-8" data-aos="fade-up">
+            <p className="mb-4 md:mb-0">
               <span className="text-yellow-400">&copy; {new Date().getFullYear()} </span> 
               RR Hair Clinic. All rights reserved.
             </p>
+
+            {/* Social Media Icons */}
+            <div className="flex space-x-6 text-2xl text-yellow-400">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500">
+                <FaInstagram />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+                <FaFacebookF />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+                <FaXTwitter />
+              </a>
+            </div>
           </div>
         </div>
       </div>

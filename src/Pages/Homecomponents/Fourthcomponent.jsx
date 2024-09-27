@@ -20,13 +20,13 @@ const Fourthcomponent = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="w-full h-auto bg-pink-300">
+    <div className="w-full h-auto bg-blue-300">
     {/* Header Section */}
-<div className="relative w-full sm:h-[200px] lg:h-[250px] bg-gradient-to-b from-blue-500 to-pink-300 mb-4 flex items-center justify-center">
+<div className="relative w-full sm:h-[200px] lg:h-[250px] bg-gradient-to-b from-blue-500 to-blue-300 mb-4 flex items-center justify-center">
   <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left px-4 py-4 md:px-8 lg:px-16 space-y-4 md:space-y-0 md:space-x-8">
     {/* Title */}
     <div className="flex flex-col items-center md:items-start">
-      <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-nunito uppercase text-gray-700">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-nunito uppercase text-yellow-500 text-shadow-lg">
         Treatments
       </h2>
     </div>
@@ -64,7 +64,7 @@ const Fourthcomponent = () => {
             />
             <div className="absolute inset-0 flex items-center justify-center text-center p-4 bg-gradient-to-t from-black via-transparent to-transparent group-hover:hidden ">
 
-              <h2 className="text-xl md:text-2xl font-bold font-nunito text-blue-500 transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 ">
+              <h2 className="text-xl md:text-2xl font-bold font-nunito text-yellow-500 text-shadow-lg transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 ">
                 {treatment.title}
               </h2>
             </div>
