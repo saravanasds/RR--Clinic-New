@@ -21,10 +21,10 @@ const Book = () => {
 
     emailjs
       .send(
-        'service_hs33knz',   // Replace with your EmailJS service ID
-        'template_8zu2vgn',  // Replace with your EmailJS template ID
+        'service_2baifaa',   // Replace with your EmailJS service ID
+        'template_8muqero',  // Replace with your EmailJS template ID
         formData,
-        'Gwv8DQSyRwLKIUilq'  // Replace with your EmailJS user ID
+        'uQjdcEYjHzohCkQ2T'  // Replace with your EmailJS user ID
       )
       .then(
         (result) => {
