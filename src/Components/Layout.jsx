@@ -29,7 +29,7 @@ const Layout = () => {
       </main>
 
       {/* Popup */}
-      {showPopup && <Popup onClose={closePopup} />}
+      {/* {showPopup && <Popup onClose={closePopup} />} */}
 
       <Footer />
     </div>
