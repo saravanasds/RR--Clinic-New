@@ -7,6 +7,11 @@ import ImageBG from '../assets/docs.jpeg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
+import Logo from "../assets/Logo/Logo RR Aesthetics.png"
+import Logo2 from "../assets/Logo/Logo Aesthetice .png"
+
+
 function Footer() {
   useEffect(() => {
     AOS.init({
@@ -40,9 +45,20 @@ function Footer() {
           >
             {/* Clinic Overview */}
             <div className="flex flex-col items-center" data-aos="fade-right">
-              <h1 className="text-2xl md:text-4xl font-semibold font-nunito mb-4 text-blue-500">
-                RR Hair Clinic
-              </h1>
+            <div className="items-center my-4">
+              <Link to="/"  onClick={scrollToTop}>
+    <img
+    src={Logo} // Replace with the actual path to your logo
+    alt="RR Hair Clinic Logo"
+    className="h-24 hover:scale-110 transition duration-300 cursor-pointer" // Adjust the height based on the size of the logo
+  />
+  {/* <img
+    src={Logo2} // Replace with the actual path to your logo
+    alt="RR Hair Clinic Logo"
+    className="h-2 hidden md:block" // Adjust the height based on the size of the logo
+  /> */}
+  </Link>
+    </div>
               <p className="text-center">
                 Your clinic description goes here. It provides a brief overview of your clinic and services.
               </p>
@@ -149,6 +165,12 @@ function Footer() {
       <hr className='my-8 w-[85%] mx-auto' />
           {/* Copyright Section */}
           <div className="flex flex-col items-center md:flex-row justify-center md:justify-evenly text-center mt-8" data-aos="fade-up">
+            <p className="mb-4 md:mb-0">
+              Designed & Developed by
+              <span className="text-yellow-400 px-1"><a href="https://sdstechzone.in" target="_blank" rel="noopener noreferrer">SDS Techzone</a></span> 
+            </p>
+            {/*  */}
+
             <p className="mb-4 md:mb-0">
               <span className="text-yellow-400">&copy; {new Date().getFullYear()} </span> 
               RR Hair Clinic. All rights reserved.

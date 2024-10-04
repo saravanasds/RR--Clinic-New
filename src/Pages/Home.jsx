@@ -10,11 +10,13 @@ import Testimonial from "./Homecomponents/Testimonial";
 const Home = () => {
   return (
     <>
+      <div className="overflow-x-hidden">
       <Hero />
       <Firstcomponent />
       <Thirdcomponent />
       <Fourthcomponent />
       <Consult />
+      </div>
       
 
       {/* <div className="h-[50vh] bg-slate-300 flex justify-center items-center">

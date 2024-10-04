@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Modal from '../../Components/Modal';
+import Book from '../../Pages/Book';
+
 
 // images
 import HairTrans from "../../assets/comp/2S1YfvpYTuq1KKYrilnN1g.jpg"
@@ -20,6 +23,9 @@ import Moha2 from "../../assets/comp/mohamed-after-5.jpg"
 
 import Rick1 from "../../assets/comp/ricky-a-1.jpg"
 import Rick2 from "../../assets/comp/ricky-b-1.jpg"
+
+import Ski1 from "../../assets/comp/t1.jpeg"
+import Ski2 from "../../assets/comp/t2.jpeg"
 
 
 
@@ -72,9 +78,24 @@ const ImageComparison = ({ beforeImage, afterImage, label }) => {
   );
 };
 
+
 const Transformation = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+ // Open modal function
+ const openModal = () => {
+  setIsModalOpen(true);
+};
+
+// Close modal function
+const closeModal = () => {
+  setIsModalOpen(false);
+};
+
   return (
-    <div className="max-w-7xl mx-auto p-6 space-y-12 lg:pt-32">
+  <>
+     <div className="max-w-7xl mx-auto p-6 space-y-12 lg:pt-32">
       {/* Hero Section */}
       <section
   className="text-center bg-cover bg-top bg-no-repeat py-16 rounded-lg relative"
@@ -86,7 +107,7 @@ const Transformation = () => {
   >
     Transformation Treatments
   </h1>
-  <p className="text-lg md:text-2xl text-blue-600 mt-4" style={{ textShadow: '4px 4px 6px rgba(0,0,0,0.9)' }}>
+  <p className="text-lg md:text-2xl font-nunito text-black font-semibold text-shadow-lg  mt-4" style={{ textShadow: '4px 4px 6px white' }}>
     Achieve your dream transformation with our cutting-edge treatments for hair and skin!
   </p>
 </section>
@@ -130,29 +151,29 @@ const Transformation = () => {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-white shadow-lg p-4 rounded-lg hover:shadow-2xl transition-all">
             <ImageComparison 
-              beforeImage={Trans1}
-              afterImage={Trans2}
+              beforeImage={Trans2}
+              afterImage={Trans1}
               label="Result 1"
             />
           </div>
           <div className="bg-white shadow-lg p-4 rounded-lg hover:shadow-2xl transition-all">
             <ImageComparison 
-              beforeImage={Ab1}
-              afterImage={Ab2}
+              beforeImage={Ab2}
+              afterImage={Ab1}
               label="Result 2"
             />
           </div>
           <div className="bg-white shadow-lg p-4 rounded-lg hover:shadow-2xl transition-all">
             <ImageComparison 
-              beforeImage={John1}
-              afterImage={John2}
+              beforeImage={John2}
+              afterImage={John1}
               label="Result 3"
             />
           </div>
           <div className="bg-white shadow-lg p-4 rounded-lg hover:shadow-2xl transition-all">
             <ImageComparison 
-              beforeImage={Moha1}
-              afterImage={Moha2}
+              beforeImage={Moha2}
+              afterImage={Moha1}
               label="Result 4"
             />
           </div>
@@ -165,8 +186,8 @@ const Transformation = () => {
           </div>
           <div className="bg-white shadow-lg p-4 rounded-lg hover:shadow-2xl transition-all">
             <ImageComparison 
-              beforeImage="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg"
-              afterImage="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg"
+              beforeImage={Ski1}
+              afterImage={Ski2}
               label="Transformations 6"
             />
           </div>
@@ -208,11 +229,16 @@ const Transformation = () => {
         <p className="text-lg text-gray-600 mt-2">
           Book your appointment today and start your journey toward the new you!
         </p>
-        <button className="mt-6 bg-yellow-600 text-white px-6 py-3 rounded-full font-medium hover:bg-yellow-500 transition-all">
+        <button className="mt-6 bg-yellow-600 text-white px-6 py-3 rounded-full font-medium hover:bg-yellow-500 transition-all"  onClick={openModal}>
           Book Now
         </button>
       </section>
-    </div>
+    </div> 
+    <Modal isOpen={isModalOpen} closeModal={closeModal}>
+        <Book />
+      </Modal>
+  </>
+    
   );
 };
 

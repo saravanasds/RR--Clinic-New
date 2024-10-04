@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import eyebrow from "../../assets/eyebro.jpg";
+import fue1 from "../../assets/fue.jpg";
 import cosmic from "../../assets/hair.jpg";
 import eyelash from "../../assets/eyelashh.jpg";
 import laser from "../../assets/laser1.jpeg";
@@ -8,8 +8,8 @@ import scalp from "../../assets/scalpig.jpeg";
 import fue from "../../assets/fue1.jpeg";
 
 const treatments = [
-  { id: 1, src: eyebrow, alt: "eyebrow", title: "Eyebrow Transplant", description: "A specialized procedure to enhance and reshape eyebrows." },
-  { id: 2, src: cosmic, alt: "cosmic", title: "Cosmic Hair Transplantation", description: "Advanced hair restoration techniques for natural-looking results." },
+  { id: 1, src: fue1, alt: "eyebrow", title: "PRP GFC", description: "A specialized procedure to enhance and reshape hair-growth." },
+  { id: 2, src: cosmic, alt: "cosmic", title: "Cosmeticc Hair Transplantation", description: "Advanced hair restoration techniques for natural-looking results." },
   { id: 3, src: eyelash, alt: "eyelash", title: "Eyelash Lift and Extension", description: "Enhance and lengthen your lashes with our expert treatments." },
   { id: 4, src: scalp, alt: "scalp", title: "Scalp Micropigmentation", description: "Non-surgical solution for a fuller-looking scalp." },
   { id: 5, src: laser, alt: "laser", title: "Oxygen Laser Therapy", description: "Rejuvenate your skin with our advanced laser therapy." },

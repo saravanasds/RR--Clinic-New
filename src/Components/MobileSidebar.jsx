@@ -1,6 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+
+
+import Logo from "../assets/Logo/Logo RR Aesthetics.png"
+import Logo2 from "../assets/Logo/Logo Aesthetice .png"
 
 import Modal from "../Components/Modal";
 import Book from "../Pages/Book";
@@ -55,7 +59,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar }) => {
     <>
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 h-full bg-white/30 backdrop-blur-xl shadow-lg overflow-scroll transition-transform transform z-[1000] ${
+        className={`fixed top-0 left-0 h-full bg-black/50 backdrop-blur-xl shadow-lg overflow-scroll transition-transform transform z-[1000] max-h-screen ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         style={{
@@ -70,13 +74,19 @@ const MobileSidebar = ({ isOpen, toggleSidebar }) => {
           }
         `}</style>
 
-        <div className="flex flex-col justify-evenly items-center p-6 h-full">
-          <h2
-            className="font-bold text-2xl py-3 text-center text-white underline underline-offset-4"
-            style={{ textShadow: '2px 2px 2px rgba(0,0,0,0.7)' }}
-          >
-            RR Hair Clinic
-          </h2>
+        <div className="flex flex-col justify-evenly items-center  h-full max-h-screen">
+        <Link to="/"  onClick={scrollToTop}>
+    <img
+    src={Logo} // Replace with the actual path to your logo
+    alt="RR Hair Clinic Logo"
+    className="h-24 hover:scale-110 transition duration-300 cursor-pointer" // Adjust the height based on the size of the logo
+  />
+  {/* <img
+    src={Logo2} // Replace with the actual path to your logo
+    alt="RR Hair Clinic Logo"
+    className="h-2 hidden md:block" // Adjust the height based on the size of the logo
+  /> */}
+  </Link>
 
           <ul className="space-y-4">
             <li>
@@ -218,6 +228,14 @@ const MobileSidebar = ({ isOpen, toggleSidebar }) => {
           >
             Book Appointment
           </button>
+        </div>
+        {/*  */}
+
+        <div className=' text-center'>
+        <p className="mb-4 md:mb-0 mx-auto font-bold ">
+            Developed by
+        <span className="text-blue-800 px-1 font-poppins "><a href="https://sdstechzone.in" target="_blank" rel="noopener noreferrer">SDS Techzone</a></span> 
+        </p>
         </div>
       </div>
 

@@ -39,7 +39,7 @@ const Popup = ({ onClose }) => {
       <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
         <div
           ref={popupRef} // Attach ref to the card
-          className="relative bg-white p-4 sm:p-6 py-12 rounded-lg shadow-lg w-11/12 max-w-sm sm:max-w-md mx-auto"
+          className="relative bg-white bg-opacity-60 backdrop-blur-sm p-4 sm:p-6 py-12 rounded-lg shadow-lg w-11/12 max-w-sm sm:max-w-md mx-auto border-[1px] border-white"
         >
           {/* Background PRP GFC animated text */}
           <div className=" inset-0 overflow-hidden">
@@ -49,7 +49,7 @@ const Popup = ({ onClose }) => {
           </div>
 
           <h2 className="relative text-xl sm:text-2xl font-bold mb-4 z-10">Welcome to Our Website!</h2>
-          <p className="relative mb-4 z-10">
+          <p className="relative mb-4 z-10 text-white">
             Thank you for visiting. We hope you have a great experience exploring our services.
           </p>
 

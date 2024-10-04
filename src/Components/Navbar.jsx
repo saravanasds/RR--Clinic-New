@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp, FaChevronRight } from "react-icons/fa";
 import { FaBarsStaggered } from "react-icons/fa6";
 import MobileSidebar from "./MobileSidebar";
 import Modal from "../Components/Modal";
 import Book from "../Pages/Book";
+
+import Logo from "../assets/Logo/Logo RR Aesthetics.png"
+import Logo2 from "../assets/Logo/Logo Aesthetice .png"
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -82,13 +85,20 @@ const Navbar = () => {
     <>
     
       {/* Mobile Navbar */}
-      <div className="flex justify-between items-center lg:hidden p-4 px-8 md:px-[100px] md:py-8 bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg z-[990] sticky top-0 backdrop-blur-lg rounded-b-lg">
-        <h2
-          className="font-bold text-xl text-white md:pl-10"
-          style={{ textShadow: "2px 2px 2px rgba(0,0,0,0.7)" }}
-        >
-          RR Hair Clinic
-        </h2>
+      <div className="flex justify-between items-center lg:hidden p-4 px-8 md:px-[100px] md:py-8 bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg z-[990] sticky top-0 backdrop-blur-lg rounded-b-lg">
+        {/* Logo */}
+  <Link to="/" onClick={scrollToTop}>
+  <img
+    src={Logo} // Replace with the actual path to your logo
+    alt="RR Hair Clinic Logo"
+    className="h-12 md:h-12" // Adjust the height based on the size of the logo
+  />
+  <img
+    src={Logo2} // Replace with the actual path to your logo
+    alt="RR Hair Clinic Logo"
+    className="h-2 hidden md:block mx-auto" // Adjust the height based on the size of the logo
+  />
+  </Link>
 
         <button onClick={toggleMobileSidebar} className="text-white md:pr-10">
           {isMobileSidebarOpen ? <FaBarsStaggered size={28} /> : <FaBars size={28} />}
@@ -96,18 +106,24 @@ const Navbar = () => {
       </div>
 
       <nav
-        className={`hidden lg:flex w-full items-center justify-between p-4 bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg fixed top-0 z-[990] rounded-b-2xl  transition-transform duration-300 backdrop-blur-lg ${
+        className={`hidden lg:flex w-full items-center justify-evenly p-4 px-10 bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg fixed top-0 z-[990] rounded-b-2xl  transition-transform duration-300 backdrop-blur-lg ${
           showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         
         {/* Logo on the left */}
-        <h2
-          className="font-bold text-2xl text-white ml-5 flex-none tracking-wide"
-          style={{ textShadow: "2px 2px 2px rgba(0,0,0,0.7)" }}
-        >
-          RR Hair Clinic
-        </h2>
+    <Link to="/" onClick={scrollToTop} className="items-center ">
+    <img
+    src={Logo} // Replace with the actual path to your logo
+    alt="RR Hair Clinic Logo"
+    className="h-14 md:h-16 " // Adjust the height based on the size of the logo
+  />
+  <img
+    src={Logo2} // Replace with the actual path to your logo
+    alt="RR Hair Clinic Logo"
+    className="h-2 hidden md:block mx-auto" // Adjust the height based on the size of the logo
+  />
+    </Link>
 
         {/* Centered links */}
         <ul className="text-white flex items-center gap-6 p-2 text-lg mx-auto">
@@ -116,7 +132,7 @@ const Navbar = () => {
               to="/" onClick={scrollToTop}
               className={({ isActive }) =>
                 isActive
-                  ? "block p-2 px-4 text-yellow-600 font-bold text-lg border-b-2 border-yellow-400 transition-all duration-300"
+                  ? "block p-2 px-4 text-yellow-500 font-bold text-lg border-b-2 border-yellow-400 transition-all duration-300"
                   : "block p-2 px-4 hover:text-yellow-300 text-lg transition-all duration-300"
               }
             >
@@ -128,7 +144,7 @@ const Navbar = () => {
               to="/about" onClick={scrollToTop}
               className={({ isActive }) =>
                 isActive
-                  ? "block p-2 px-4 text-yellow-600 font-bold text-lg border-b-2 border-yellow-400 transition-all duration-300"
+                  ? "block p-2 px-4 text-yellow-500 font-bold text-lg border-b-2 border-yellow-400 transition-all duration-300"
                   : "block p-2 px-4 hover:text-yellow-300 text-lg transition-all duration-300"
               }
             >
@@ -139,7 +155,7 @@ const Navbar = () => {
           <li className="relative" ref={dropdownRef}>
             <button
               onClick={toggleDropdown}
-              className="flex items-center p-2 px-4 hover:text-yellow-300 text-lg transition-all duration-300"
+              className="flex items-center p-2 px-4 hover:text-yellow-500 text-lg transition-all duration-300"
             >
               <span className="font-semibold">Services</span>
               {isDropdownOpen ? (
@@ -235,7 +251,7 @@ const Navbar = () => {
               to="/Transformation" onClick={scrollToTop}
               className={({ isActive }) =>
                 isActive
-                  ? "block p-2 px-4 text-yellow-600 font-bold text-lg border-b-2 border-yellow-200 transition-all duration-300"
+                  ? "block p-2 px-4 text-yellow-500 font-bold text-lg border-b-2 border-yellow-200 transition-all duration-300"
                   : "block p-2 px-4 hover:text-yellow-300 text-lg transition-all duration-300"
               }
             >
@@ -246,7 +262,7 @@ const Navbar = () => {
 
          {/* Book button on the right */}
   <button
-    className="bg-white text-yellow-600 hover:text-white border border-yellow-600 hover:bg-yellow-400 py-3 px-4 text-lg rounded-full font-semibold transition-all duration-300 mr-5"
+    className="bg-white text-yellow-500 hover:text-white border border-yellow-600 hover:bg-yellow-400 py-3 px-4 text-lg rounded-full font-semibold transition-all duration-300 mr-5"
     // onClick={() => setIsModalOpen(true)}
     onClick={openModal}
   >
