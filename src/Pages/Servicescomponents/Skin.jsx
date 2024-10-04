@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 
 import p1 from "../../assets/p1.png";
-import p2 from "../../assets/p2.png";
-import p4 from "../../assets/p4.png";
+import p2 from "../../assets/d2.png";
+import p4 from "../../assets/d3.png";
 
 
 const Skin = () => {
@@ -34,20 +34,17 @@ const Skin = () => {
 
     {
       id: 2,
-      button: "Microdermabrasion",
+      button: "Laser Hair Reduction",
       img: p2,
-      p: "Microdermabrasion is a popular non-invasive cosmetic procedure that aims to improve the appearance of the skin by exfoliating the outermost layer.This treatment uses a minimally abrasive instrument to gently sand the skin, removing the thicker, uneven outer layer.",
-      h1:" Smoother Skin Texture:",
-      p1:" Microdermabrasion helps remove dead skin cells and can improve the overall texture of your skin, making it feel smoother and more even.",
-      h2:"Reduced Fine Lines and Wrinkles: ",
-      p2:"By stimulating the production of new skin cells and collagen, microdermabrasion can help diminish the appearance of fine lines and wrinkles.",
-      h3:"Reduced Blackheads and Whiteheads:",
-      p3:"  Microdermabrasion can help clear out clogged pores, reducing the occurrence of blackheads and whiteheads.",
-      // h4:"Boosted Collagen Production:",
-      // p4:"  The exfoliation process can stimulate collagen production, which is essential for maintaining skin elasticity and firmness.",
-      // h5:"Enhanced Radiance: ",
-      // p5:" The removal of dead skin cells helps reveal fresher, more radiant skin underneath, giving you a brighter complexion.",
-    },
+      p: "Laser Hair Reduction (LHR) is a non-invasive procedure that uses concentrated light to target and reduce unwanted hair growth. The laser selectively targets dark, coarse hair while leaving the surrounding skin undamaged.",
+      h1: "Long-Term Hair Reduction:",
+      p1: "LHR significantly reduces hair growth over time, providing long-lasting results with minimal maintenance.",
+      h2: "Precision Targeting:",
+      p2: "The laser targets hair follicles with precision, making it ideal for small and large areas, including sensitive skin.",
+      h3: "Faster Treatment:",
+      p3: "Each pulse of the laser takes a fraction of a second and can treat many hairs at once, allowing for quick treatment of large areas such as legs or back.",
+     },
+    
     {
       id: 3,
       button: "Q-Switched Laser",

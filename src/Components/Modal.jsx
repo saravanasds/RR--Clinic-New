@@ -28,7 +28,7 @@ const Modal = ({ isOpen, closeModal, children }) => {
 
   return (
     <div className="fixed inset-0  bg-opacity-50 flex items-center justify-center z-[5000]">
-      <div ref={modalRef} className="bg-white  rounded-lg shadow-lg w-11/12 md:w-1/3">
+      <div ref={modalRef} className="bg-white  rounded-lg shadow-lg w-11/12 md:w-1/3 min-w-[50%]">
         {children}
       </div>
     </div>

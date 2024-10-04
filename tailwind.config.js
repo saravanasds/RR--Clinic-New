@@ -7,6 +7,10 @@ export default {
   theme: {
     extend: {
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
         textShadow: {
           default: '1px 1px 0 rgba(0, 0, 0, 0.7)',
           md: '2px 2px 0 rgba(0, 0, 0, 0.7)',
@@ -37,6 +41,7 @@ export default {
         slideDown: 'slideDown 0.5s ease-in-out forwards',
         shake: 'shake 3s infinite',
         bounce: 'bounce 2s infinite',
+        marquee: 'marquee 10s linear infinite',
       },
       boxShadow: {
         'clay-card': '35px 35px 70px hsl(302deg 25% 50%), inset -10px -10px 20px hsl(302deg 25% 50% / 70%), inset 0 16px 32px hsl(302deg 25% 95%)',

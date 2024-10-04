@@ -1,32 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Footer from './Footer';
 import Navbar from './Navbar';
 import ContactWh from './ContactWh';
+import Popup from '../Components/Popup'; // Import the Popup component
 
 const Layout = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  // Trigger popup on page load
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Contact Info Section */}
-      <div className="bg-blue-500 text-white p-2 md:p-4 lg:hidden">
-        <p className="text-sm md:text-base flex justify-evenly">
-          <div>
-          <span className='font-bold text-md text-black pr-2'>Contact</span><a href="tel:+919655334567" className="underline">96553 34567</a></div> |
-          <div>
-          <span className='font-bold text-md text-black pr-2'>Email: </span><a href="mailto:info@example.com" className="underline">info@example.com</a>
-          </div>
-        </p>
-      </div>
-      
+    <div className="flex flex-col min-h-screen ">
       {/* Navbar */}
       <Navbar />
       
-      <main className="flex-grow bg-slate-200 min-h-[50vh] ">
+      <main className="flex-grow bg-slate-200 min-h-[50vh]">
         <Outlet />
         <ContactWh/>
       </main>
-      
+
+      {/* Popup */}
+      {showPopup && <Popup onClose={closePopup} />}
+
       <Footer />
     </div>
   );

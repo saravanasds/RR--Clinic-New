@@ -47,7 +47,7 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="w-[100%] h-auto overflow-hidden text-white lg:mt-14">
+    <div className="w-[100%] h-auto overflow-hidden text-white lg:mt-14 overflow-x-hidden">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div
@@ -78,7 +78,7 @@ const HeroCarousel = () => {
                onClick={openModal} // Replace with actual action
               >
                  <span>Book Your Consultation</span>
-                 <FaArrowRight className="animate-bounce"/> {/* Arrow icon */}
+                 <FaArrowRight className="animate-bounce hidden md:block"/> {/* Arrow icon */}
               </button>
             </div>
           </div>

@@ -84,13 +84,13 @@ const Navbar = () => {
       {/* Mobile Navbar */}
       <div className="flex justify-between items-center lg:hidden p-4 px-8 md:px-[100px] md:py-8 bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg z-[990] sticky top-0 backdrop-blur-lg rounded-b-lg">
         <h2
-          className="font-bold text-xl text-white pl-10"
+          className="font-bold text-xl text-white md:pl-10"
           style={{ textShadow: "2px 2px 2px rgba(0,0,0,0.7)" }}
         >
           RR Hair Clinic
         </h2>
 
-        <button onClick={toggleMobileSidebar} className="text-white pr-10">
+        <button onClick={toggleMobileSidebar} className="text-white md:pr-10">
           {isMobileSidebarOpen ? <FaBarsStaggered size={28} /> : <FaBars size={28} />}
         </button>
       </div>
